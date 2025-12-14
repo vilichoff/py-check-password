@@ -12,7 +12,10 @@ from app.main import check_password
         ("Pass%word1", False),
         ("AAAAAAAA1@", True),
         ("aaaaaaaa1@", False),
+        ("Password@", False),
+        ("Abcdefghij1@KLmno", False),
     ],
 )
 def test_check_password(password: str, check_result: bool) -> None:
     assert check_password(password) == check_result
+
